@@ -1,0 +1,15 @@
+# After editing this file y
+- name: geerlingguy.mysql
+  version: 2.0.2
+
+  # This is explicitly downloaded from github so I can pin version
+- src: https://github.com/pmbauer/ansible-tarsnap
+  version: af2861948af35606dd19ba65076528629d5796da
+  name: pmbauer.tarsnap
+- name: geerlingguy.security
+  version: 1.1.1
+- name: kamaln7.swapfile
+  src: https://github.com/kamaln7/ansible-swapfile
+  version: 8eb0e18d90a7f25b6658fbf56bcba01b84a664fc
+- name: geerlingguy.nginx
+  version: 1.8.0

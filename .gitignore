@@ -1,0 +1,8 @@
+# Opencraft rc files
+/*openrc*sh
+# Retry files
+/*retry
+# Vault password
+/.vault-pass
+# Galaxy roles
+/galaxy-roles
