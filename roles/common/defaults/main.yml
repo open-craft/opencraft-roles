@@ -1,0 +1,25 @@
+---
+ROLE_INDEPENENT_USEFULL_PACKAGES:
+  - htop
+  - ntp
+  - sudo
+  - vim
+  - iftop
+  - iotop
+  - mosh
+  - git
+  - screen
+  - build-essential
+  - apticron
+  - apt-file
+  - etckeeper
+  - links
+  - tree
+  - pwgen
+  - libxml2-dev
+  - libxslt1-dev
+  - python-dev
+  - tmpreaper
+
+ETCKEEPER_COMMIT_USER: "Etc Keeper"
+ETCKEEPER_COMMIT_EMAIL: "xavier@opencraft.com"

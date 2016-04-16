@@ -1,0 +1,7 @@
+---
+# defaults file for dalite-create
+DALITE_OS_NAME: "dalite-prod"
+DALITE_OS_KEY: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+# Ubuntu 14.04
+DAILTE_IMAGE: "9bfac38c-688f-4b63-bf3b-69155463c0e7"
+DALITE_FLAVOR: "vps-ssd-2"

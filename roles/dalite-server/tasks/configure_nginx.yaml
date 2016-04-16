@@ -1,0 +1,12 @@
+---
+- name: copy ssl cert
+  template: src=ssl-cert.pem dest=/etc/ssl/certs/ssl-cert.pem group=www-data mode=740
+
+- name: copy ssl key
+  template: src=ssl-cert.key dest=/etc/ssl/private/ssl-cert.key  group=www-data mode=740
+
+- name: prepare nginx site
+  template: src=default.site dest=/etc/nginx/sites-enabled/default
+
+- name: restart nginx
+  service: name=nginx state=restarted

@@ -1,0 +1,10 @@
+---
+# tasks file for sanity-check
+- name: template sanity check
+  template: src=sanity-check.sh dest={{ SANITY_CHECK_SCRIPT_LOCATION }} mode=500
+
+- name: install sanity checks crontab
+  cron:
+    job: "{{ SANITY_CHECK_SCRIPT_LOCATION }} > /dev/null 2>&1"
+    minute: "10,20,30,40,50"
+    name: "sanity checker for: {{ SANITY_CHECK_SUBJECT }}"

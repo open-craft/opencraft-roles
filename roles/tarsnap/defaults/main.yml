@@ -1,0 +1,3 @@
+# Dont change this value, it's value is referenced
+tarsnap_key: /root/tarsnap.key
+tarsnap_cache: /var/tarsnap/cache

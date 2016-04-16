@@ -1,0 +1,26 @@
+---
+# tasks file for forward-mails-to-gmail
+- name: install deps
+  apt: name={{ item }} state=present
+  with_items: "{{ FORWARD_MAIL_OS_PACKAGES }}"
+
+- name: template aliases
+  template: src=aliases dest=/etc/aliases
+
+- name: update aliases
+  command: newaliases
+
+- name: template postfix
+  template: src=postfix.conf dest=/etc/postfix/main.cf
+
+- name: template password
+  template: src=sasl_passwd dest=/etc/postfix/sasl_passwd mode=400
+  register: sasl_changed
+
+- name: run postmap
+  command: postmap /etc/postfix/sasl_passwd
+
+- name: restart
+  service: name=postfix state=restarted
+
+

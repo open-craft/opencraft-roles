@@ -1,0 +1,27 @@
+---
+
+# A file that setups all env-vars required to authenticate to swift
+# Example:
+#
+#   export OS_AUTH_URL=''
+#   export OS_TENANT_ID=''
+#   export OS_TENANT_NAME=''
+#   export OS_USERNAME=''
+#   export OS_PASSWORD=''
+#   export OS_REGION_NAME=''
+LOCAL_SWIFT_RC: null
+
+LOCAL_SWIFT_OS_DEPS:
+  - python2.7
+  - python-virtualenv
+
+LOCAL_SWIFT_PIP_DEPS:
+  - python-swiftclient
+  - python-keystoneclient
+  - requests[security]
+  - certifi
+
+LOCAL_SWIFT_VENV: /root/local-swift-venv
+LOCAL_SWIFT_CLIENT: "{{ LOCAL_SWIFT_VENV }}/bin/swift"
+LOCAL_SWIFT_RC_DEST: /root/local-swift-rc
+LOCAL_SWIFT_SHELL_COMMAND: ". {{ LOCAL_SWIFT_RC_DEST }} && {{ LOCAL_SWIFT_CLIENT }}"

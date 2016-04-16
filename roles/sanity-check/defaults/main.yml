@@ -1,0 +1,28 @@
+---
+# defaults file for sanity-check
+
+SANITY_CECK_DISK_SPACE:
+    # Mount point
+  - mount: /
+    # Treshold in mb
+    treshold_mb: 16000
+
+SANITY_CHECK_LIVE_PORTS:
+  - host: localhost
+    port: 801
+    description: "Oh no! Http is down"
+  - host: localhost
+    port: 4431
+    description: "Oh no! Https is down"
+
+
+SANITY_CHECK_COMMANDS:
+  - command: /bin/false
+    description: "Echo broke, were doomed!"
+
+SANITY_CHECK_SCRIPT_LOCATION: /root/sanity-check.sh
+SANITY_CHECK_LOG_LOCATION: /root/sanity-check
+
+SANITY_CHECK_SNITCH: null
+
+SANITY_CHECK_SUBJECT: 'Some errors in your server'

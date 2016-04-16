@@ -1,0 +1,25 @@
+---
+- name: create log download user
+  user:
+    name: "{{ DALITE_LOG_DOWNLOAD_USER }}"
+    password: "{{ DALITE_LOG_DOWNLOAD_PASSWORD }}"
+    home: "{{ DALITE_LOG_DOWNLOAD_USER_HOME }}"
+    shell: /bin/bash
+
+- name: create directory for the logs
+  file: name={{ DALITE_LOG_DOWNLOAD_LOG_DIR }} state=directory
+
+- name: create directory for the logs
+  file: name={{ DALITE_LOG_DOWNLOAD_DB_DIR }} state=directory
+
+- name: create postlogrotate script
+  template:
+    src: dalite-post-logrotate.sh
+    dest: /usr/local/sbin/dalite-dalite-post-logrotate.sh
+    owner: root
+    group: root
+    mode: "0700"
+
+- name: copy logrotate
+  copy: src=logrotate.d dest=/etc/logrotate.d/dalite
+

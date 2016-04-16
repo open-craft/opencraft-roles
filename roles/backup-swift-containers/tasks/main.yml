@@ -1,0 +1,17 @@
+---
+- name: create backup dir
+  file: name="{{ BACKUP_SWIFT_LOCAL_DIR }}" state=directory mode="0700"
+
+- name: save backup script
+  template:
+    src: backup-swift.sh
+    dest: "{{ BACKUP_SWIFT_DEST }}"
+    owner: "root"
+    mode: "0700"
+
+
+- name: add job to cron
+  cron:
+    name: "backup container {{ BACKUP_SWIFT_CONTAINER }}"
+    minute: "0"
+    job: "{{ BACKUP_SWIFT_DEST }} > /dev/null 2>&1"

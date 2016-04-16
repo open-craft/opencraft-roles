@@ -1,0 +1,29 @@
+---
+DALITE_USER_NAME: "dalite"
+DALITE_USER_HOME: "/home/{{ DALITE_USER_NAME }}"
+DALITE_APP_LOCATION: "{{ DALITE_USER_HOME }}/repository"
+DALITE_VENV: "{{ DALITE_USER_HOME }}/venv"
+DALITE_PYTHON: "{{ DALITE_VENV }}/bin/python"
+DALITE_MANAGE_PY: "{{ DALITE_PYTHON }} {{ DALITE_APP_LOCATION }}/manage.py "
+
+# Note: when overriding these leave DJANGO_SETTINGS_MODULE inside
+DALITE_ENV:
+  DJANGO_SETTINGS_MODULE: 'dalite.settings'
+
+DALITE_LOG_DOWNLOAD_LOG_DIR: "/var/log/dalite"
+
+DALITE_STATICFILES_ROOT: "{{ DALITE_USER_HOME }}/static"
+DALITE_MEDIA_ROOT: "{{ DALITE_USER_HOME }}/media"
+
+DALITE_REPOSITORY: https://github.com/open-craft/dalite-ng.git
+# c180a0d84e92c19c8762f7a68f54561dfc747955 sanity check
+# 25fc233cecce5f1b6fbe3d25fc1c0fd9688ba4a0 lti works
+DALITE_REPOSITORY_VERSION: "c180a0d84e92c19c8762f7a68f54561dfc747955"
+
+DALITE_REQUIREMENTS:
+  - python-virtualenv
+  - gunicorn
+
+PYTHON_BUILD_DEP_REQIREMENTS:
+  - python-mysqldb
+  - python-pil

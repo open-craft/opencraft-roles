@@ -1,9 +1,3 @@
-- name: Set FQDN hostname
-  hostname: name="{{ inventory_hostname }}.vm.plebia.org"
-
-- name: Copy hosts file
-  copy: src=hosts dest=/etc/hosts owner=root group=root mode=644
-
 - name: apt-get update && dist-upgrade
   apt: upgrade=dist update_cache=yes cache_valid_time=18000
 
@@ -18,33 +12,13 @@
 
 - name: Install prerequisite packages
   apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=18000
-  with_items:
-    - htop
-    - ntp
-    - sudo
-    - vim
-    - iftop
-    - iotop
-    - mosh
-    - git
-    - screen
-    - build-essential
-    - apticron
-    - apt-file
-    - etckeeper
-    - links
-    - tree
-    - pwgen
-    - libxml2-dev
-    - libxslt1-dev
-    - python-dev
-    - tmpreaper
+  with_items: "{{ ROLE_INDEPENENT_USEFULL_PACKAGES }}"
 
 - name: Activate tmpreaper
   lineinfile: dest=/etc/tmpreaper.conf state=absent regexp="^SHOWWARNING=true"
 
 - name: Configure git author <root@<current_host>
-  shell: git config --global user.name "Xavier Antoviaque" && git config --global user.email "xavier@antoviaque.org"
+  shell: git config --global user.name "{{ ETCKEEPER_COMMIT_USER }}" && git config --global user.email "{{ ETCKEEPER_COMMIT_EMAIL }}"
 
 - name: etckeeper - Use git
   copy: src=etckeeper.conf dest=/etc/etckeeper/etckeeper.conf owner=root group=root mode=644 backup=yes

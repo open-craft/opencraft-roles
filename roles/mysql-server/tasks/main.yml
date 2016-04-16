@@ -1,0 +1,11 @@
+---
+
+- name: Allow required ports
+  ufw: rule=allow port={{ item }} proto=tcp
+  with_items:
+    - 22
+    - 3306
+
+- name: Set firewall default policy
+  ufw: state=enabled policy=reject
+

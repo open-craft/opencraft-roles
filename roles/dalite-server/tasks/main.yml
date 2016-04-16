@@ -1,0 +1,18 @@
+---
+- name: Allow required ports
+  ufw: rule=allow port={{ item }} proto=tcp
+  with_items:
+    - 22
+    - 80
+    - 443
+
+- name: Set firewall default policy
+  ufw: state=enabled policy=reject
+
+- name: Install required packages
+  apt: name={{ item }} state=present
+  with_items: "{{ DALITE_ADDITIONAL_PACKAGES }}"
+
+- include: configure_nginx.yaml
+- include: configure_log_download.yaml
+

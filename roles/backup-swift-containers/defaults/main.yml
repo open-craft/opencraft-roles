@@ -1,0 +1,10 @@
+---
+# defaults file for backup-swift-containers
+
+BACKUP_SWIFT_CONTAINER: null
+BACKUP_SWIFT_LOCAL_DIR: null
+# Timestamp will be appended
+BACKUP_SWIFT_BACKUP_NAME: null
+BACKUP_SWIFT_SNITCH: null
+
+BACKUP_SWIFT_DEST: '/usr/local/sbin/dalite-backup-container.sh'

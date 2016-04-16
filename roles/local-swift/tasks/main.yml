@@ -1,0 +1,20 @@
+---
+
+- name: install swift deps
+  apt: name={{ item }} state=present
+  with_items: "{{ LOCAL_SWIFT_OS_DEPS }}"
+
+- name: install swift client
+  pip:
+    virtualenv_python: /usr/bin/python2.7
+    name: "{{ item }}"
+    virtualenv: "{{ LOCAL_SWIFT_VENV }}"
+    state: present
+  with_items: "{{ LOCAL_SWIFT_PIP_DEPS }}"
+
+- name: save local rc
+  template:
+    src: local_swift_rc
+    dest: "{{ LOCAL_SWIFT_RC_DEST }}"
+    mode: "0500"
+    owner: "root"

@@ -1,0 +1,11 @@
+---
+- name: Create dalite server
+  os_server:
+    key: "{{ DALITE_OS_KEY }}"
+    image: "{{ DAILTE_IMAGE }}"
+    name: "{{ DALITE_OS_NAME }}"
+    flavor: "{{ DALITE_FLAVOR }}"
+    key_name: "{{ DALITE_KEYNAME }}"
+    state: present
+    timeout: 360
+    wait: yes

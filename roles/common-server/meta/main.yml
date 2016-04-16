@@ -1,0 +1,14 @@
+dependencies:
+ - name: common
+   when: "{{ PROCESS_COMMON_ROLE }}"
+ - name: sanity-check
+   when: "{{ PROCESS_COMMON_ROLE }}"
+ - name: forward-mails-to-smtp-server
+   when: "{{ PROCESS_COMMON_ROLE }}"
+ - name: "kamaln7.swapfile"
+   swapfile_size: "2GB"
+   when: "{{ PROCESS_COMMON_ROLE }}"
+ - name: pmbauer.tarsnap
+   when: "{{ PROCESS_COMMON_ROLE }}"
+ - name: tarsnap
+   when: "{{ PROCESS_COMMON_ROLE }}"

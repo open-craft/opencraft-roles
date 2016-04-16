@@ -1,0 +1,4 @@
+---
+# defaults file for mysql-openstack
+
+MYSQL_OPENSTACK_DB_DEVICE: "/dev/vdb1"
