@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Will exit on first error (we want it!)
 set -e
 

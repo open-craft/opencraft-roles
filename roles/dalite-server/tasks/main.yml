@@ -15,4 +15,3 @@
 
 - include: configure_nginx.yaml
 - include: configure_log_download.yaml
-

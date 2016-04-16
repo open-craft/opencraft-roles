@@ -6,4 +6,3 @@
 
 - name: restart guncorn
   service: name=gunicorn state=restarted
-

@@ -22,4 +22,3 @@
 
 - name: copy logrotate
   copy: src=logrotate.d dest=/etc/logrotate.d/dalite
-

@@ -1,4 +1,3 @@
-
 dependencies:
   # Before common as updates sources list
   - mysql-openstack
