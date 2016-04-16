@@ -1,16 +1,7 @@
 dependencies:
  - name: configure-apt
-   when: "{{ PROCESS_COMMON_ROLE }}"
  - name: geerlingguy.security
-   when: "{{ PROCESS_COMMON_ROLE }}"
  - name: sanity-check
-   when: "{{ PROCESS_COMMON_ROLE }}"
  - name: forward-mails-to-smtp-server
-   when: "{{ PROCESS_COMMON_ROLE }}"
- - name: "kamaln7.swapfile"
-   swapfile_size: "2GB"
-   when: "{{ PROCESS_COMMON_ROLE }}"
+ - name: kamaln7.swapfile
  - name: pmbauer.tarsnap
-   when: "{{ PROCESS_COMMON_ROLE }}"
- - name: tarsnap
-   when: "{{ PROCESS_COMMON_ROLE }}"

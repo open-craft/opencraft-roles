@@ -1,5 +1,6 @@
 dependencies:
-  # Before common as updates sources list
-  - mysql-openstack
   - common-server
+  - mysql
   - geerlingguy.mysql
+  - tarsnap
+

@@ -13,8 +13,8 @@
     requirements: "{{ DALITE_APP_LOCATION }}/requirements/prod-openstack.txt"
     virtualenv_python: "/usr/bin/python2.7"
 
-
-# This will be removed
+# This is a hack Gunicorn==17.5 is installed system wide, so virtualenv and system version match.
+# possibly this should be sloved in a cleaner way
 - name: install dependencies
   pip:
     virtualenv: "{{ DALITE_VENV }}"

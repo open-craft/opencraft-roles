@@ -12,12 +12,3 @@
 
 - name: chmod /var/lib/mysql
   file: path=/var/lib/mysql mode=700 state=directory
-
-- name: copy mysql key
-  copy: src=mysql.key dest=/root/mysql.sign.key
-
-- name: add mysql key
-  shell: apt-key add /root/mysql.sign.key
-
-- name: add mysql list
-  copy: src=mysql.list dest=/etc/apt/sources.list.d/mysql.list

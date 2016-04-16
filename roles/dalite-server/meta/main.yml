@@ -1,5 +1,4 @@
 dependencies:
-
   - common-server
   - backup-swift-containers
   - dalite
