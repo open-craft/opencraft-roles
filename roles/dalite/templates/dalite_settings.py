@@ -47,12 +47,12 @@ if getpass.getuser() == '{{ DALITE_USER_NAME }}':
             'file_debug_log': {
                 'level': 'DEBUG',
                 'class': 'logging.FileHandler',
-                'filename': '{{ DALITE_LOG_DOWNLOAD_LOG_DIR }}/debug.log',
+                'filename': '{{ DALITE_LOG_DIR }}/debug.log',
             },
             'file_student_log': {
                 'level': 'INFO',
                 'class': 'logging.FileHandler',
-                'filename': '{{ DALITE_LOG_DOWNLOAD_LOG_DIR }}/student.log',
+                'filename': '{{ DALITE_LOG_DIR }}/student.log',
             },
         },
         'loggers': {

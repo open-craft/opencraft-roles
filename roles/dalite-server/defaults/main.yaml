@@ -8,9 +8,5 @@ DALITE_LOG_TARSNAP_ARCHIVE: dalite-logs
 # Can be none
 DALITE_LOG_TARSNAP_SNITCH: null
 
-DALITE_ADDITIONAL_PACKAGES:
+DALITE_LOG_ADDITIONAL_PACKAGES:
   - mysql-client
-
-# Set a password for log download user, it must be hashed by crypt function
-# see mkpasswd command
-# DALITE_LOG_DOWNLOAD_PASSWORD: null

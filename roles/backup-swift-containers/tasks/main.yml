@@ -9,7 +9,6 @@
     owner: "root"
     mode: "0700"
 
-
 - name: add job to cron
   cron:
     name: "backup container {{ BACKUP_SWIFT_CONTAINER }}"

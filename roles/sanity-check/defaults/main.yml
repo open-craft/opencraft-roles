@@ -15,9 +15,9 @@ SANITY_CHECK_LIVE_PORTS:
     port: 4431
     description: "Oh no! Https is down"
 
-
+# If any of these return false
 SANITY_CHECK_COMMANDS:
-  - command: /bin/false
+  - command: echo 1
     description: "Echo broke, were doomed!"
 
 SANITY_CHECK_SCRIPT_LOCATION: /root/sanity-check.sh

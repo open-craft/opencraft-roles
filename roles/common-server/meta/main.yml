@@ -1,5 +1,7 @@
 dependencies:
- - name: common
+ - name: configure-apt
+   when: "{{ PROCESS_COMMON_ROLE }}"
+ - name: geerlingguy.security
    when: "{{ PROCESS_COMMON_ROLE }}"
  - name: sanity-check
    when: "{{ PROCESS_COMMON_ROLE }}"

@@ -1,10 +1,15 @@
 ---
-# defaults file for backup-swift-containers
 
+# Container to be backed up
 BACKUP_SWIFT_CONTAINER: null
+
+# Where should we store container contents
 BACKUP_SWIFT_LOCAL_DIR: null
-# Timestamp will be appended
+# Name of tarsnap backup, we will append a timestamp
 BACKUP_SWIFT_BACKUP_NAME: null
+
+# Optionally a Dead Mans Snitch url that will be notified
 BACKUP_SWIFT_SNITCH: null
 
-BACKUP_SWIFT_DEST: '/usr/local/sbin/dalite-backup-container.sh'
+# Where should we store a backup file
+BACKUP_SWIFT_DEST: '/usr/local/sbin/backup-container.sh'

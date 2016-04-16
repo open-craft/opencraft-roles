@@ -1,7 +1,9 @@
-Role Name
-=========
+Common Server
+=============
 
-A brief description of the role goes here.
+A role that sets up a generic server with some base configuration, in in itself it: 
+
+* Configures unattended upgrades 
 
 Requirements
 ------------

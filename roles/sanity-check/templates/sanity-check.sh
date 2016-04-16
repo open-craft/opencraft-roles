@@ -43,6 +43,7 @@ fi
 if test ${is_ok} -ne 0
 then
     echo "Something is wrong mailing root"
+    echo >> "Please check report in {{ SANITY_CHECK_LOG_LOCATION }}";
     cat ${report} | mail -s "{{ SANITY_CHECK_SUBJECT }}" root;
 fi
 
