@@ -18,7 +18,7 @@ DALITE_MEDIA_ROOT: "{{ DALITE_USER_HOME }}/media"
 DALITE_REPOSITORY: https://github.com/open-craft/dalite-ng.git
 
 # Temporary commit containing dalite changes
-DALITE_REPOSITORY_VERSION: "98b0ce2242e8f9b9567ccc4b7f4d8c7fee507793"
+DALITE_REPOSITORY_VERSION: "552dfff0ec58e4396a847967cde12ab2ece95263"
 
 DALITE_REQUIREMENTS:
   - python-virtualenv
