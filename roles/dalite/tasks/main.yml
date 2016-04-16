@@ -23,5 +23,5 @@
 - name: Create log dir
   file: name={{ DALITE_LOG_DIR }} state=directory owner={{ DALITE_USER_NAME }}
 
-- include: deploy-app.yaml
-- include: deploy-gunicorn.yaml
+- include: deploy-app.yml
+- include: deploy-gunicorn.yml

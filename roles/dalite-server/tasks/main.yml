@@ -13,5 +13,5 @@
   apt: name={{ item }} state=present
   with_items: "{{ DALITE_LOG_ADDITIONAL_PACKAGES }}"
 
-- include: configure_nginx.yaml
-- include: configure_log_download.yaml
+- include: configure_nginx.yml
+- include: configure_log_download.yml
